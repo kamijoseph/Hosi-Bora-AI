@@ -1,0 +1,14 @@
+pandas
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-openai
+chromadb
+faiss-cpu
+pydantic
+python-dotenv
+streamlit
+tiktoken
+ragas
+datasets
