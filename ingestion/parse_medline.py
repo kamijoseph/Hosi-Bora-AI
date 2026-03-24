@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 from langchain_core.documents import Document
+import re
 
 def parse_medlineplus_xml(file_path: str):
     tree = ET.parse(file_path)
@@ -52,5 +53,8 @@ def parse_medlineplus_xml(file_path: str):
 
     return documents
 
-data = parse_medlineplus_xml("/home/kami/Projects/Hosi Bora AI/data/raw/mplus_topics_2026-03-24.xml")
-print(data[:5])
+
+def clean_text(text: str) -> str:
+    text = re.sub(r"<.*?>", "", text)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
