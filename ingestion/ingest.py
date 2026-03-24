@@ -27,3 +27,6 @@ def ingest():
     vectordb.persist()
 
     print("Ingestion complete.")
+
+if __name__ == "__main__":
+    ingest()
