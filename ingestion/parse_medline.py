@@ -42,7 +42,7 @@ def parse_medlineplus_xml(file_path: str):
             if section_text:
                 documents.append(
                     Document(
-                        page_content=section_text.strip(),
+                        page_content=clean_text(section_text),
                         metadata={
                             "title": title,
                             "section": section_title,
